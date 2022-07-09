@@ -1,0 +1,4 @@
+[2022-07-0810:52:15] [ ERROR] [GlobalExceptionHandler:17] Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "p"
+[2022-07-0810:52:49] [ ERROR] [GlobalExceptionHandler:17] Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "e"
+[2022-07-0812:33:15] [ ERROR] [GlobalExceptionHandler:17] could not execute statement; SQL [n/a]; constraint ["FK4OKCQR9IQT2IW6XHY1PPSMO3L: PUBLIC.TURNOS FOREIGN KEY(PACIENTE_ID) REFERENCES PUBLIC.PACIENTES(ID) (CAST(2 AS BIGINT))"; SQL statement:
+delete from pacientes where id=? [23503-214]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
