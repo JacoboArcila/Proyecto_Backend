@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
 
      //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
      //los datos que el usuario cargará del nuevo estudiante
-    const formulario = document.querySelector('#add_new_paciente');
+    const formulario = document.querySelector('#add_new_odontologo');
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
@@ -11,14 +11,12 @@ window.addEventListener('load', function () {
         const formData = {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
-            dni: document.querySelector('#dni').value,
-            domicilio: document.querySelector('#domicilio').value,
-            fechaIngreso: document.querySelector('#fechaIngreso').value
+            matricula: document.querySelector('#matricula').value,
         };
 
         //invocamos utilizando la función fetch la API estudiantes con el método POST
         //que guardará al estudiante que enviaremos en formato JSON
-        const url = '/pacientes';
+        const url = '/odontologos';
         const settings = {
             method: 'POST',
             headers: {
@@ -58,9 +56,7 @@ window.addEventListener('load', function () {
     function resetUploadForm(){
         document.querySelector('#nombre').value = "";
         document.querySelector('#apellido').value = "";
-        document.querySelector('#dni').value="";
-        document.querySelector('#domicilio').value="";
-        document.querySelector('#fechaIngreso').value="";
+        document.querySelector('#matricula').value="";
 
     }
 

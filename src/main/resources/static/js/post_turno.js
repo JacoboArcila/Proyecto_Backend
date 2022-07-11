@@ -2,23 +2,24 @@ window.addEventListener('load', function () {
 
      //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
      //los datos que el usuario cargará del nuevo estudiante
-    const formulario = document.querySelector('#add_new_paciente');
+    const formulario = document.querySelector('#add_new_turno');
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
 
         //creamos un JSON que tendrá los datos del nuevo estudiante
+        const pacientes = document.querySelector('#paciente_id').value
+        const odontologos = document.querySelector('#odontologo_id').value
+        console.log(pacientes, odontologos);
         const formData = {
-            nombre: document.querySelector('#nombre').value,
-            apellido: document.querySelector('#apellido').value,
-            dni: document.querySelector('#dni').value,
-            domicilio: document.querySelector('#domicilio').value,
-            fechaIngreso: document.querySelector('#fechaIngreso').value
+            paciente: {id: pacientes},
+            odontologo: {id: odontologos},
+            fecha: document.querySelector('#fecha').value
         };
 
         //invocamos utilizando la función fetch la API estudiantes con el método POST
         //que guardará al estudiante que enviaremos en formato JSON
-        const url = '/pacientes';
+        const url = '/turnos';
         const settings = {
             method: 'POST',
             headers: {
@@ -30,6 +31,7 @@ window.addEventListener('load', function () {
         fetch(url, settings)
             .then(response => response.json())
             .then(data => {
+            console.log(data)
                //Si no hay ningun error se muestra un mensaje diciendo que el estudiante
                //se agrego bien
                  let successAlert = '<div class="alert alert-success alert-dismissible">' +
@@ -56,11 +58,9 @@ window.addEventListener('load', function () {
     });
 
     function resetUploadForm(){
-        document.querySelector('#nombre').value = "";
-        document.querySelector('#apellido').value = "";
-        document.querySelector('#dni').value="";
-        document.querySelector('#domicilio').value="";
-        document.querySelector('#fechaIngreso').value="";
+        document.querySelector('#paciente_id').value = "";
+        document.querySelector('#odontologo_id').value = "";
+        document.querySelector('#fecha').value="";
 
     }
 
