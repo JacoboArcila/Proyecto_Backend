@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
                               '<td class=\"td_first_name\">' + paciente.nombre.toUpperCase() + '</td>' +
                               '<td class=\"td_last_name\">' + paciente.apellido.toUpperCase() + '</td>' +
                               '<td class=\"td_last_name\">' + paciente.domicilio.toUpperCase() + '</td>' +
-                                '<td class=\"td_last_name\">' + paciente.dni + '</td>' +
+                               '<td class=\"td_last_name\">' + paciente.dni + '</td>' +
                               '<td class=\"td_last_name\">' + paciente.fechaIngreso + '</td>' +
                               '<td>' + deleteButton + '</td>';
 

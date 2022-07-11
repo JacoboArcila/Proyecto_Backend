@@ -13,7 +13,9 @@ window.addEventListener('load', function () {
             id: document.querySelector('#paciente_id').value,
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
-
+            dni: document.querySelector('#dni').value,
+            domicilio: document.querySelector('#domicilio').value,
+            fechaIngreso: document.querySelector('#fechaIngreso').value
         };
 
         //invocamos utilizando la función fetch la API estudiantes con el método PUT
@@ -47,6 +49,9 @@ window.addEventListener('load', function () {
               document.querySelector('#paciente_id').value = paciente.id;
               document.querySelector('#nombre').value = paciente.nombre;
               document.querySelector('#apellido').value = paciente.apellido;
+              document.querySelector('#dni').value = paciente.dni
+              document.querySelector('#domicilio').value = paciente.domicilio
+              document.querySelector('#fechaIngreso').value = paciente.fechaIngreso
 
             //el formulario por default esta oculto y al editar se habilita
               document.querySelector('#div_paciente_updating').style.display = "block";
